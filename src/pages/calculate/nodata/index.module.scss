@@ -1,0 +1,41 @@
+@import "../../../style/mixins";
+@import "../../../style/variables";
+
+@include spinAni;
+
+.title {
+    @include title;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.btn {
+    @include button-fresh;
+    line-height: 4em;
+    height: 4em;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1em;
+    position: relative;
+    color: $color-text-secondary;
+    background: none;
+    border: 0.0235em solid;
+
+    &:first-child {
+        background-color: $color-highlight;
+        color: #fff;
+    }
+}
+
+.fig {
+    @include pt-right;
+}
+
+.processing  {
+    padding: 1em;
+    width: 7em;
+    height: 7em;
+    margin: 0 auto;
+    animation: spinner 3s infinite ease-in-out;
+    fill: #03A9F4;
+}

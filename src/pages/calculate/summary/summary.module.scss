@@ -1,0 +1,91 @@
+.table {
+    table-layout: auto;
+   border-radius: 0.3em;
+   //overflow: hidden;
+   width: 35em;
+    &, th, tb, td, tr {
+        //border: 1px solid #ccc;
+        border-collapse: collapse;
+        padding: 0.5em 0.8em;
+        text-align: left;
+        color: #555;
+        line-height: 1.4rem;
+    }
+
+    .thead, tr, td, tbody {
+        display: block;
+    }
+
+    td {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    & th {
+        color: #222;
+    }
+    
+    thead{
+        position: absolute;
+        background-color: #f4f4f4;
+        //z-index: 4000;
+        
+    }
+
+    tbody {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 2.4em;
+        right: 0;
+        overflow: auto;
+    }
+
+    tr {
+        padding: 0;
+        white-space: nowrap;
+        &:nth-child(even) {
+            background-color: #f4f4f4;
+            background-image: linear-gradient(45deg, rgba(#000,0.1), transparent)
+        }
+    }
+
+    th, td {
+        width: 5em;
+        text-align: center;
+        background-image: linear-gradient(45deg, rgba(#000,0.02), transparent);
+        overflow: hidden;
+        &:nth-child(2) {
+            width: 10em;
+        }
+    }
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 0.5em 0 0;
+    max-width: 80%;
+    overflow: auto;
+}
+
+td.info {
+    text-align: center;
+    //font-size: 0.8em;
+}
+
+.dataInfo {
+    padding: 0.5em 0;
+    line-height: 1.6em;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.fixWidth {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    width: 37em;
+    font-size: 0.85em;
+}

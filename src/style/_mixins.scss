@@ -1,0 +1,71 @@
+
+@mixin tiny-wrapper {
+    max-width: 20em;
+    margin: 0 auto;
+}
+
+@mixin white-wrapper {
+}
+
+@mixin button-fresh {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    line-height: 4em;
+    background-color: #3F51B5;
+    background-image: linear-gradient(#2DAAC1, #1766D3);
+    text-align: center;
+    border-radius: 5em;
+
+}
+
+
+@mixin title {
+    color: #547191;
+    font-weight: bold;
+    padding-bottom: 1em;
+    font-size: 1.2em;
+    padding: 0 0.4em 1em;
+}
+
+@mixin fill {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin pt-right {
+    position: absolute;
+    border: 0.5em solid transparent;
+    border-right: 0;
+    border-color: transparent;
+    border-left-color: inherit;
+    height: 1em;
+    right: 1.5em;
+    top: 1.5em;
+}
+
+
+@mixin max-wrapper {
+    position: absolute;
+    bottom: 0;
+    overflow: auto;
+    top: 9em;
+    right: 0%;
+    left: 0%;
+}
+
+@mixin spinAni {
+    @keyframes spinner {
+        0% {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+        50% {
+        opacity: 0.5;
+        }
+        100% {
+        opacity: 1;
+        transform: rotate(360deg);
+        }
+    }  
+}

@@ -1,0 +1,24 @@
+@import "../../style/mixins";
+
+.wrapper {
+    @include white-wrapper
+}
+
+.btn {
+    @include button-fresh;
+}
+
+.title {
+    @include title;
+}
+
+.tinyWrapper {
+  @include tiny-wrapper;  
+}
+
+.maxWrapper {
+    @include max-wrapper;
+    left: 5%;
+    top: 0;
+    right: 5%;
+}

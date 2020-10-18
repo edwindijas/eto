@@ -1,0 +1,54 @@
+.input {
+    display: inline-block;
+    margin: 0 0 0.5em 0;
+    width: 100%;
+    @media screen and (min-width:620px) {
+        width: 12em;
+        display: inline-block;
+        margin-left: 0.5em;
+    }
+}
+
+.label {
+    display: block;
+    height: 0;
+    position: relative;
+    span {
+        display: block;
+        transition: all 0.25s;
+    }
+}
+
+.input.active, .input.passive  {
+    .label {
+        line-height: 1.2em;
+        bottom: 0.7em;
+        span {
+            background-color: #fff;
+            padding: 0 0.5em;
+            width: max-content;
+            font-weight: bold;
+            color: #607D8B;
+        }
+    }
+
+    .main {
+        border-color: #607D8B;
+    }
+    
+}
+
+.label, .main {
+    padding: 0 1em;
+    line-height: 2.5rem;
+    font-size: 0.8rem;
+}
+
+.main {
+    display: block;
+    height: 2.5rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    outline: none;
+    transition: all 0.25s;
+}
