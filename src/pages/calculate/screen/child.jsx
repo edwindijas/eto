@@ -10,6 +10,9 @@ export const ChildScreen = (props) => {
         <div className={classes.buttons} >
             <button onClick={toggleFull} className={classes.maximise} ><IcoMaximise /></button>
         </div>
-        {props.children}
+        <div className={classes.childWrapper} >
+            {props.children}
+        </div>
+       
     </div>
 }

@@ -5,8 +5,6 @@ import {Card} from "./card";
 
 export const Summary = (props) => {
     const {data} = props;
-    //changeData
-    console.log(data);
     
     const  displayData  = (from, to) => {
         return data.slice(from, to).map(

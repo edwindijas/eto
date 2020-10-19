@@ -4,10 +4,19 @@
 }
 
 .option {
-    width: 10em;
+    width: 25%;
     font-size: 0.8em;
     display: inline-block;
-    margin-right: 2em;
     position: relative;
+    z-index: 5000;
+    padding-right: 0.5em;
+    vertical-align: top;
 }
 
+.internal {
+    white-space: nowrap;
+}
+
+.wrapper {
+    height: 4em;
+}

@@ -3,7 +3,7 @@ import React, {useState, createRef} from "react";
 import classes from "./index.module.scss";
 import XSXL from "xlsx";
 import {IcoProcessing} from "../../../components/icons/IcoProcessing";
-
+import {IcoForward} from "../../../components/icons/IcoForward";
 export const NoData = (props) => {
     const inputRef = createRef();
     const [processing, changeProcessing] = useState(false);
@@ -19,47 +19,14 @@ export const NoData = (props) => {
 
         const reader = new FileReader()
         reader.onload = function (e) {
-            let sheetName = "";
             const data = e.target.result;
             const xlsx = XSXL.read(data, {type: "binary"});
-            //const json_parsed = XSXL.utils.sheet_to_json(xlsx);
-            xlsx.SheetNames.forEach(name => props.district === name.toLowerCase() && (sheetName = name));
-
-            if (!sheetName) {
-                alert(`There is no sheet fro the district ${props.district}`);
-                return;
-            }
-
-            
-
-            const jsonData = XSXL.utils.sheet_to_json(xlsx.Sheets[sheetName]);
-
-            const years = [];
-            const yearData = {};
-            let currentYear;
-            let workingData;
-
-            jsonData.forEach((data, index) => {
-               const yy = data.YYYY;
-               if (currentYear !== yy) {
-                   years.push(yy);
-                   if (workingData) {
-                       yearData[currentYear] = workingData;
-                   }
-                   workingData = [];
-                   currentYear = yy;
-               }
-
-               workingData.push(data);
+            const expoData = {};
+            xlsx.SheetNames.forEach(name => {
+                const jsonData = XSXL.utils.sheet_to_json(xlsx.Sheets[name]);
+                expoData[name.toLowerCase()] = jsonData;
             });
-
-            yearData[currentYear] = workingData;
-
-            props.changeData({
-                years,
-                yearData
-            });
-
+            props.changeData(expoData);
         }
 
         reader.readAsBinaryString(file);
@@ -70,7 +37,7 @@ export const NoData = (props) => {
         inputRef.current.click();
     }
 
-    return <div >
+    return <div className="max-wrapper">
         <form style={{display: "none"}} >
             <input type='file' onChange={loadData} ref={inputRef}  accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
         </form>
@@ -79,8 +46,8 @@ export const NoData = (props) => {
             <IcoProcessing />
         </div>}
         {!processing && <div >
-            <button className={classes.btn} onClick={importFile} >Import Excel File <div className={classes.fig}></div></button>
-            <button className={classes.btn} >Manual Entry <div className={classes.fig} ></div></button>
+            <button className={classes.btn} onClick={importFile} >Import Excel File <div className={classes.fig}><IcoForward /></div></button>
+            <button className={classes.btn} >Manual Entry <div className={classes.fig} ><IcoForward /></div></button>
         </div>}
     </div>
 }

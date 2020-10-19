@@ -1,8 +1,17 @@
 .visual {
     height: 100%;
     font-size: 3em;
-    background-color: #fff;
     text-align: center;
     color: #aaa;
     line-height: 1.4em;
+}
+
+.container {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    min-width: 20em;
 }

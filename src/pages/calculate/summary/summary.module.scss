@@ -2,7 +2,6 @@
     table-layout: auto;
    border-radius: 0.3em;
    //overflow: hidden;
-   width: 35em;
     &, th, tb, td, tr {
         //border: 1px solid #ccc;
         border-collapse: collapse;
@@ -44,16 +43,15 @@
     tr {
         padding: 0;
         white-space: nowrap;
-        &:nth-child(even) {
-            background-color: #f4f4f4;
-            background-image: linear-gradient(45deg, rgba(#000,0.1), transparent)
+        border-bottom: 0.1em solid #eee;
+        &:hover {
+            background-color: #fff;
         }
     }
 
     th, td {
         width: 5em;
         text-align: center;
-        background-image: linear-gradient(45deg, rgba(#000,0.02), transparent);
         overflow: hidden;
         &:nth-child(2) {
             width: 10em;
@@ -87,5 +85,5 @@ td.info {
     margin: 0 auto;
     height: 100%;
     width: 37em;
-    font-size: 0.85em;
+    font-size: 0.75em;
 }

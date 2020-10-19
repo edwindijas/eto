@@ -405,6 +405,10 @@ svg , .tb, .tr, .td {
   @include fill;
 }
 
+svg {
+  line-height: 0;
+}
+
 .tb {
   display: table;
 }

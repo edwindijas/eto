@@ -18,19 +18,25 @@
     height: 50%;
     position: relative;
     overflow: auto;
+    padding: 1em;
+    background-color: #fff;
+    border: 1em solid transparent;
+    border-width: 0.25em 0.5em ;
+    background-clip: padding-box;
+
     &:last-child {
         padding: 0;
     }
 
     &.fullScreen {
-        z-index: 3000;
+        z-index: 3001;
         position: absolute;
         top: 0;
         left:0;
         right: 0;
         bottom: 0;
         height: 100%;
-        background-color: #fff;
+        
     }
 
 }
@@ -39,6 +45,7 @@
     position: absolute;
     right: 0;
     top: 1em;
+    z-index: 3000;
 }
 
 .maximise {
@@ -48,4 +55,11 @@
     padding: 0.5em;
     min-width: 0;
     box-shadow: 0 0 10px #00000030;
+}
+
+.childWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0.5em;
 }
