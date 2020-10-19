@@ -26,6 +26,7 @@ export const NoData = (props) => {
                 const jsonData = XSXL.utils.sheet_to_json(xlsx.Sheets[name]);
                 expoData[name.toLowerCase()] = jsonData;
             });
+
             props.changeData(expoData);
         }
 
@@ -47,7 +48,7 @@ export const NoData = (props) => {
         </div>}
         {!processing && <div >
             <button className={classes.btn} onClick={importFile} >Import Excel File <div className={classes.fig}><IcoForward /></div></button>
-            <button className={classes.btn} >Manual Entry <div className={classes.fig} ><IcoForward /></div></button>
+            {/*<button className={classes.btn} >Manual Entry <div className={classes.fig} ><IcoForward /></div></button>*/}
         </div>}
     </div>
 }

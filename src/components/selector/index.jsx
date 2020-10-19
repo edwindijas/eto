@@ -23,6 +23,7 @@ export const Selector = (props) => {
     
 
     const clickFunc = (e, option) => {
+        const lastOption = active;
         if (multiple) {
             if (active && active.length === max && active.indexOf(option) !== -1) {
                 e.preventDefault();
@@ -42,9 +43,13 @@ export const Selector = (props) => {
 
         setActive(option);
         changeParState(option);
-        //changeShow(false);
+        
         e.preventDefault();
         e.stopPropagation();
+
+        if (lastOption === option) {
+            changeShow(false);
+        }
     };
 
     

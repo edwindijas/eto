@@ -74,10 +74,6 @@ export const Calculate = (props) => {
   }, [orignalData, period, district, season]);
 
 
-  console.log(params.season);
-  console.log(params.period);
-  console.log(params.district);
-
   const noData = () => {
     return  <div className="tb">
         <div className="tr">

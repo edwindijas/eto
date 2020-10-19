@@ -1,6 +1,6 @@
 const files = [];
 const cached_Files = ['/'];
-const cache_name = 'eto_public_sw_2';
+const cache_name = 'eto_public_sw_2.1';
 
 self.addEventListener("install", function (event) {
     event.waitUntil(
