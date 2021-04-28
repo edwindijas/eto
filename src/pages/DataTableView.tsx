@@ -39,7 +39,7 @@ const monthTable = (data: iDataProps[]) => {
     const pushChildren = (month: number) => {
         items.push(
             <MonthEle key = {items.length} >
-                <ValueEle > { months[month] } </ValueEle>
+                <ValueEle > { months[month - 1] } </ValueEle>
                 { children }
                 { Array(31 - children.length).fill(0).map(
                     (value, index) => {
