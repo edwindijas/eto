@@ -4,6 +4,7 @@ import { months } from 'Months';
 import { colors } from 'colors';
 import { iGraphPreview } from './GraphPreview'
 import { iDataProps } from './GetData';
+import { device } from 'device';
 
 export const DataTableView = (props: iGraphPreview ) => {
     //console.log(props.data && Object.keys(props.data));
@@ -59,7 +60,7 @@ const monthTable = (data: iDataProps[]) => {
             <ValueEle key = {x} >{ data[x].ETO && data[x].ETO?.toFixed(2) }</ValueEle>
         )
         if (x === data.length - 1 || data[x + 1].MM !== data[x].MM) {
-            pushChildren(data[data.length - 1].MM);
+            pushChildren(data[x].MM);
         }
     }
 
@@ -74,6 +75,10 @@ const MainEle = styled.div`
     padding: 2em;
     width: 90%;
     border-radius: 1em;
+    @media ${ device.laptop.max } {
+        width: 95%;
+        padding: 2em 1em;
+    }
 `;
 
 const WrapperEle = styled.div`
@@ -109,6 +114,10 @@ const MonthEle = styled.div`
         width: 4em;
         font-weight: bold;
     }
+    min-width: 4em;
+
+    
+
 `;
 
 

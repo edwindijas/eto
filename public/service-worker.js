@@ -1,6 +1,6 @@
 const files = [];
 const cached_Files = ['/'];
-const cache_name = 'eto_public_sw_2.4';
+const cache_name = 'eto_public_sw_2.6';
 
 self.addEventListener("install", function (event) {
     event.waitUntil(
@@ -20,7 +20,9 @@ self.addEventListener("fetch", function(event) {
                     return response;
                 }
                 return fetch(event.request).then(response => {
-                    if (!response || !response.status !== 200 || response.type !== 'basic') {
+                    if (!response || response.status !== 200 || response.type !== 'basic') {
+                        console.log(response);
+                        console.log(!response, !response.status !== 200, response.type !== 'basic');
                         return response;
                     }
 
@@ -39,11 +41,18 @@ self.addEventListener("fetch", function(event) {
 
 self.addEventListener("activate", function (event) {
     const allowList = [];
+    console.log('activatred')
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
             return Promise.all(
                 cacheNames.map(function(cacheName) {
-                    return caches.delete(cacheName);
+
+                    if (cacheName !== cache_name) {
+                        return caches.delete(cacheName);
+                    }
+                   
+                    return cacheName;
+
                 })
             )
         })
